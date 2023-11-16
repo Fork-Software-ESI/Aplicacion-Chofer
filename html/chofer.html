@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chofer</title>
-    <link rel="stylesheet" href="../css/gerente.css">
-    <link rel="stylesheet" href="../css/tabla.css">
+    <title>Lista - Paquete</title>
+    <link rel="icon" href="../img/LOGO.png">
+    <link rel="stylesheet" href="../css/lista.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tabla.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
+
+<style>
+    .btn:hover {
+        background-color: #0088ae;
+        color: black;
+    }
+
+    .footer{
+        position: relative;
+    }
+</style>
+
 <body>
     <header>
         <nav>
@@ -45,47 +58,66 @@
     </header>
 
     <main>
-        <div class="contenedor">
-            <h1>- Chofer -</h1>
-                <div class="opcion paquete">
-                    <h2>Paquete</h2><br>
-                    <div class="contenedor_opciones">
-                        <div class="opciones"><a href="funcionario.html">funcionario html</a></div>
-                        <div class="opciones"><a href="lista.html">Lista</a></div>
-                    </div>
+        <div class="contenedor_lista">
+            <h2>- Bienvendio Chofer -</h2>
+            <form action="">
+                <label for="ID_Chofer" style="color: white;">ID del Chofer: </label>
+                <input type="number" name="ID_Chofer" id="ID_Chofer" required><br><br>
+                <button class="btn-a" type="button" onclick="llamarFunciones()">Listar Paquetes</button>
+                <br><br>
+            </form>
+            <div class="lista">
+                <h2>- Paquetes -</h2>
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>ID Lote</th>
+                            <th>ID Paquete</th>
+                            <th>ID Estado</th>
+                            <th>Destino</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResultadosPaquete">
+                    </tbody>
+                </table>
+                <br><br>
+                <h2>- Camion -</h2>
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>ID Chofer</th>
+                            <th>ID Camion</th>
+                            <th>Fecha Hora Inicio</th>
+                            <th>ID Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResultadosCamion">
+                    </tbody>
+                </table>
+                <br><br>
+                <div class="marcarHora">
+                    <h2>- Marcar Hora -</h2>
+                    <form action="">
+                        <label for="" style="color: white;">Hora: </label>
+                        <select name="" id="accion">
+                            <option value="llegada">Llegada</option>
+                            <option value="salida">Salida</option>
+                        </select> <br><br>
+                        <button class="btn-a" type="button" onclick="plataforma()">Marcar</button>
+                    </form>
                 </div>
-                <div class="opcion lote">
-                    <h2>Lote</h2><br>
-                    <div class="contenedor_opciones">
-                        <div class="opciones"><a href="lote/lista.html">Lista</a></div>
-                        <div class="opciones"><a href="lote/crear.html">Crear</a></div>
-                    </div>
-                </div>
-                <div class="opcion estante">
-                    <h2>Estante</h2><br>
-                    <div class="contenedor_opciones">
-                        <div class="opciones"><a href="estante/lista.html">Lista</a></div>
-                        <div class="opciones"><a href="estante/crear.html">Crear</a></div>
-                    </div>
-                </div>
-                <div class="opcion camion">
-                    <h2>Camion</h2><br>
-                    <div class="contenedor_opciones">
-                        <div class="opciones"><a href="camion/lista.html">Lista</a></div>
-                        <div class="opciones"><a href="camion/crear.html">Agregar</a></div>
-                    </div>
-                </div>
-        </div>  
+            </div>
+        </div>
     </main>
 
-
-    <footer>
+    <footer id="footer" class="footer">
         <div class="container-footer">
             <div class="empresa-container espacio">
                 <h3>Empresa:</h3>
                 <ul class="empresa">
                     <li><a href="#sobre_nosotros">Sobre Nosotros</a></li>
-                    <li><a href="servicios.html">Nuestros Servicios</a></li>
+                    <li><a href="../servicios.html">Nuestros Servicios</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
@@ -110,6 +142,7 @@
             </div>
         </div>
     </footer>
-    <script src="../js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../js/chofer.js"></script>
 </body>
 </html>
