@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mapa Ruta</title>
+</head>
+
+<body>
+    <form id="rutaForm">
+        <label for="ID_Camion">ID Camion: </label><input type="numeric" name="ID_Camion"
+            id="ID_Camion" required>
+        <button type="submit">Crear ruta</button>
+    </form>
+    <div class="map-container">
+        <div id="map" style="width: 50%; height: 400px;"></div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEVxRt4C_8fqQ7_m80lbPthFaECX-MvJ8"></script>
+    <script src="../js/ruta.js"></script>
+</body>
+
+</html>
