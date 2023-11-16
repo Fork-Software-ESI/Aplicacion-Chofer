@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista - Paquete</title>
+    <link rel="icon" href="../img/LOGO.png">
     <link rel="stylesheet" href="../css/lista.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/tabla.css">
-    <link rel="icon" href="../img/LOGO.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -21,8 +21,8 @@
                 <i class="fa fa-bars"></i>
             </label>
             <div class="container_logo">
-                <a href="../../index.html">
-                    <img class="logo" src="../../img/LOGO.png" alt="logo">
+                <a href="../index.html">
+                    <img class="logo" src="../img/LOGO.png" alt="logo">
                 </a>
             </div>
             <ul class="nav_links">
@@ -51,7 +51,7 @@
             <form action="">
                 <label for="ID_Chofer" style="color: white;">ID del Chofer: </label>
                 <input type="number" name="ID_Chofer" id="ID_Chofer" required><br><br>
-                <button class="btn-a" type="button" style="color:black;" onclick="listarPaquetes()">Listar Paquetes</button>
+                <button class="btn-a" type="button" onclick="verPaquete()">Listar Paquetes</button>
                 <br><br>
             </form>
             <div class="lista">
@@ -60,7 +60,9 @@
                         <tr>
                             <th>ID Lote</th>
                             <th>ID Paquete</th>
-                            <th>ID Almacen</th>
+                            <th>ID Estado</th>
+                            <th>Destino</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody id="tablaResultados">
@@ -102,6 +104,6 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="../../js/gerente.js"></script>
+    <script src="../js/chofer.js"></script>
 </body>
 </html>
