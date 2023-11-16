@@ -13,6 +13,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
+
+<style>
+    .btn:hover {
+        background-color: #0088ae;
+        color: black;
+    }
+
+    .footer{
+        position: relative;
+    }
+</style>
+
 <body>
     <header>
         <nav>
@@ -26,7 +38,7 @@
                 </a>
             </div>
             <ul class="nav_links">
-                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
             </ul>
             <div class="menu-idioma">
@@ -51,10 +63,11 @@
             <form action="">
                 <label for="ID_Chofer" style="color: white;">ID del Chofer: </label>
                 <input type="number" name="ID_Chofer" id="ID_Chofer" required><br><br>
-                <button class="btn-a" type="button" onclick="verPaquete()">Listar Paquetes</button>
+                <button class="btn-a" type="button" onclick="llamarFunciones()">Listar Paquetes</button>
                 <br><br>
             </form>
             <div class="lista">
+                <h2>- Paquetes -</h2>
                 <table class="tabla">
                     <thead>
                         <tr>
@@ -65,14 +78,40 @@
                             <th>Accion</th>
                         </tr>
                     </thead>
-                    <tbody id="tablaResultados">
+                    <tbody id="tablaResultadosPaquete">
                     </tbody>
                 </table>
+                <br><br>
+                <h2>- Camion -</h2>
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>ID Chofer</th>
+                            <th>ID Camion</th>
+                            <th>Fecha Hora Inicio</th>
+                            <th>ID Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResultadosCamion">
+                    </tbody>
+                </table>
+                <br><br>
+                <div class="marcarHora">
+                    <h2>- Marcar Hora -</h2>
+                    <form action="">
+                        <label for="" style="color: white;">Hora: </label>
+                        <select name="" id="accion">
+                            <option value="llegada">Llegada</option>
+                            <option value="salida">Salida</option>
+                        </select> <br><br>
+                        <button class="btn-a" type="button" onclick="plataforma()">Marcar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer class="footer">
+    <footer id="footer" class="footer">
         <div class="container-footer">
             <div class="empresa-container espacio">
                 <h3>Empresa:</h3>
