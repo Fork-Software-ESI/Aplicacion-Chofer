@@ -11,7 +11,6 @@ function llamarFunciones(ID_Chofer){
         } else {
             console.log("ID_Chofer: " + ID_Chofer);
         }
-        /* plataforma(ID_Chofer); */
     });
 }
 
@@ -21,7 +20,7 @@ function verCamion(ID_Chofer, callback) {
         url: "http://localhost:8002/api/camion",
         type: "GET",
         data: {
-            "ID_Chofer": ID_Chofer
+            ID_Chofer: ID_Chofer
         },
         success: function (data) {
             var tablaResultados = document.getElementById("tablaResultadosCamion");
@@ -39,6 +38,7 @@ function verCamion(ID_Chofer, callback) {
         },
         error: function () {
             alert("Error al cargar los datos");
+            console.log("ID_Chofer: " + ID_Chofer)
             callback(false);
         }
     })
@@ -53,22 +53,6 @@ function verPaquete(ID_Chofer) {
         },
         success: function (data) {
             var tablaResultados = document.getElementById("tablaResultadosPaquete");
-            /* Cambiar nombre de ID_Estado
-            
-            switch(paquete.ID_Estado){
-                case 1:
-                    paquete.ID_Estado = "En almacen";
-                    break;
-                case 2:
-                    paquete.ID_Estado = "En lote";
-                    break;
-                case 3:
-                    paquete.ID_Estado = "En transito";
-                    break;
-                case 4:
-                    paquete.ID_Estado = "Entregado";
-                    break;
-            } */
             tablaResultados.innerHTML = '';
             data.paquetes.forEach(element => {
                 var fila = document.createElement("tr");

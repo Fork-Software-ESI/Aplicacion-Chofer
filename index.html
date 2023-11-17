@@ -77,9 +77,9 @@
         </div>
 
         <div class="container">
-            <h1 id="bienvenido">Bienvenido a Fork Software</h1>
+            <h1 id="bienvenido">Bienvenido a SATP</h1>
             <div class="formulario">
-                <form action="" method="get" name="formulario">
+                <form action="#" method="POST" name="formulario">
                     <fieldset>
                         <div class="contenedor_fieldset">
                             <div class="img">
@@ -87,23 +87,17 @@
                             </div>
                             <div class="dentro_formulario">
                                 <h2 id="inicie-sesion" style="text-align: center;">Inicie sesión</h2>
-                                <input id="placeholderUsuario" type="text" name="nombre_usuario" maxlength="20" placeholder="Usuario" required>
-                                <input id="placeholderContraseña" type="password" name="contraseña" maxlength="12" placeholder="Contraseña" required>
+                                <input id="username" id="placeholderUsuario" type="text" maxlength="20"
+                                    placeholder="Usuario" required>
+                                <input id="password" id="placeholderContraseña" type="password" maxlength="12"
+                                    placeholder="Contraseña" required>
                                 <div class="ingresar_crear">
-                                    <input id="botonIngresar" type="submit" value="INGRESAR">
+                                    <button type="submit" id="botonLogin" class="botonLogin">INGRESAR</button>
                                 </div>
                             </div>
                         </div>
                     </fieldset>
                 </form>
-            </div>
-        </div>
-
-        <div class="container_roles">
-            <div class="roles" style="margin: 100px;">
-                <ul>
-                    <li><a id="chofer" href="html/chofer.html">Chofer</a></li><br>
-                </ul>
             </div>
         </div>
 
@@ -168,6 +162,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/idioma/index.js"></script>
     <script src="js/login.js"></script>
