@@ -39,7 +39,8 @@ function traducirAEspanol(){
     txtIngles.innerHTML = "Ingles"
     txtEspañol.innerHTML = "Español"
     //homepage
-    
+    txtIDCamion.innerHTML = "ID Camion"
+    txtCrearRuta.innerHTML = "Crear Ruta"
     //footer
     txtEmpresa.innerHTML = "Empresa"
     txtDondeUbicarnos.innerHTML = "Donde ubicarnos"
