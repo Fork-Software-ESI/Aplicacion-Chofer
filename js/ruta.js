@@ -1,5 +1,6 @@
 var map;
 var markersArray = [];
+var directionsRenderer;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -7,36 +8,42 @@ function initMap() {
         center: { lat: -34.8897236, lng: -56.1656073 }
     });
 
+    var modal = document.getElementById('loadingModal');
+
     document.getElementById('rutaForm').addEventListener('submit', function (event) {
         event.preventDefault();
 
         var ID_Camion = document.getElementById('ID_Camion').value;
 
-        fetch('http://localhost:8002/api/ruta', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                ID_Camion: ID_Camion
+        modal.style.display = 'block';
+
+        setTimeout(function () {
+            fetch('http://localhost:8002/api/ruta', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ID_Camion: ID_Camion
+                })
             })
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data && Array.isArray(data) && data.length > 0) {
-                    addMarkersAndRoutes(data);
-                } else {
-                    console.error('Error en la respuesta del servidor');
-                }
-            })
-            .catch(error => {
-                console.error('Error al realizar la solicitud POST', error);
-            });
+                .then(response => response.json())
+                .then(data => {
+                    modal.style.display = 'none';
+
+                    if (data && Array.isArray(data) && data.length > 0) {
+                        addMarkersAndRoutes(data);
+                    } else {
+                        console.error('Error en la respuesta del servidor');
+                    }
+                })
+                .catch(error => {
+                    modal.style.display = 'none';
+                    console.error('Error al realizar la solicitud POST', error);
+                });
+        }, 1000);
     });
 }
-
-var directionsRenderer;
-
 
 function addMarkersAndRoutes(puntos) {
     if (!map) {
