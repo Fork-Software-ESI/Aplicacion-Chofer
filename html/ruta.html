@@ -2,18 +2,106 @@
 <html>
 
 <head>
-    <title>Mapa Ruta</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fork Software</title>
+    <link rel="stylesheet" href="../css/ruta.css">
+    <link rel="stylesheet" href="../css/lista.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../img/LOGO.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    .contenedor_lista{
+        margin-top: 75px;
+    }
+</style>
+
 <body>
-    <form id="rutaForm">
-        <label for="ID_Camion">ID Camion: </label><input type="numeric" name="ID_Camion"
-            id="ID_Camion" required>
-        <button type="submit">Crear ruta</button>
-    </form>
-    <div class="map-container">
-        <div id="map" style="width: 50%; height: 400px;"></div>
-    </div>
+    <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <div class="container_logo">
+                <a href="../index.html">
+                    <img class="logo" src="../img/LOGO.png" alt="logo">
+                </a>
+            </div>
+            <ul class="nav_links">
+                <li><a href="../index.html" data-close-menu>Inicio</a></li>
+            </ul>
+
+            <div class="menu-idioma">
+                <div id="seleccionar-idioma" class="seleccionar-idioma" onclick="toggleMenu()">
+                    <img id="bandera" src="https://flagsapi.com/ES/flat/32.png" alt="Bandera Español">
+                    <p id="idioma" class="idioma">Español</p>
+                </div>
+                <ul class="menu-lista" style="display: none;" onclick="seleccionarIdioma(event)">
+                    <li>
+                        <img src="https://flagsapi.com/US/flat/32.png" alt="Bandera Inglés">
+                        <p id="ingles" class="idioma">Ingles</p>
+                    </li>
+                    <li>
+                        <img src="https://flagsapi.com/ES/flat/32.png" alt="Bandera Español">
+                        <p id="español" class="idioma">Español</p>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor_lista">
+            <form id="rutaForm">
+                <label for="ID_Camion" style="color: white; margin-right: 2px;">ID Camion: </label>
+                <input type="numeric" name="ID_Camion" id="ID_Camion" required><br><br>
+                <button class="btn-a" type="submit" style="color: black;">Crear ruta</button><br><br>
+            </form>
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="empresa-container espacio">
+                <h3 id="empresa">Empresa:</h3>
+                <ul class="empresa">
+                    <li><a id="nosotros-footer" href="#sobre_nosotros">Sobre Nosotros</a></li>
+                    <li><a id="servicios-footer" href="html/servicios.html">Nuestros Servicios</a></li>
+                    <li><a id="contacto-footer" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="espacio">
+                <h3 id="donde-ubicarnos">Dónde Ubicarnos:</h3>
+                <div class="ubicacion">
+                    <i id="direccion" class="fa fa-map-marker"> Nos encontramos en calle 25 de agosto 1800</i>
+                </div>
+            </div>
+            <div id="contacto" class="contacto espacio">
+                <div class="container-redes">
+                    <ul class="redes">
+                        <li class="numero">+598 ***</li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=wUWMjdo9t6k&ab_channel=Temppo" target="_blank"><i
+                                    class="red fa fa-youtube-play"></i></a>
+                            <a href="https://www.instagram.com/forksoftware.uy/" target="_blank"><i
+                                    class="red fa fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/fork-software-55b93929a/" target="_blank"><i
+                                    class="red fa fa-linkedin"></i></a><br>
+                        </li>
+                        <li class="email"> forksoftware.esi@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEVxRt4C_8fqQ7_m80lbPthFaECX-MvJ8"></script>
     <script src="../js/ruta.js"></script>
 </body>
