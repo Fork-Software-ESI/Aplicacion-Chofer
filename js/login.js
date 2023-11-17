@@ -1,4 +1,4 @@
-let btn = document.getElementById('botonLogin')
+let btn = document.getElementById('botonIngresar')
 let username = document.getElementById('username')
 let password = document.getElementById('password')
 
