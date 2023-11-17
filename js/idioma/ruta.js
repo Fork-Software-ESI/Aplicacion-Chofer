@@ -19,7 +19,6 @@ let txtContactoFooter = document.getElementById("contacto-footer")
 function traducirAIngles(){
     //navbar
     txtInicio.innerHTML = "Home"
-    txtServicios.innerHTML = "Services"
     txtIngles.innerHTML = "English"
     txtEspañol.innerHTML = "Spanish"
     //homepage
@@ -37,7 +36,6 @@ function traducirAIngles(){
 function traducirAEspanol(){
     //navbar
     txtInicio.innerHTML = "Inicio"
-    txtServicios.innerHTML = "Servicios"
     txtIngles.innerHTML = "Ingles"
     txtEspañol.innerHTML = "Español"
     //homepage
