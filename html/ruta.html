@@ -37,7 +37,7 @@
                 </a>
             </div>
             <ul class="nav_links">
-                <li><a href="../index.html" data-close-menu>Inicio</a></li>
+                <li><a id="inicio" href="../index.html" data-close-menu>Inicio</a></li>
             </ul>
 
             <div class="menu-idioma">
@@ -61,9 +61,9 @@
     <main>
         <div class="contenedor_lista">
             <form id="rutaForm">
-                <label for="ID_Camion" style="color: white; margin-right: 2px;">ID Camion: </label>
+                <label for="ID_Camion" id="id-camion" style="color: white; margin-right: 2px;">ID Camion: </label>
                 <input type="numeric" name="ID_Camion" id="ID_Camion" required><br><br>
-                <button class="btn-a" type="submit" style="color: black;">Crear ruta</button><br><br>
+                <button class="btn-a" id="crear-ruta" type="submit" style="color: black;">Crear ruta</button><br><br>
             </form>
             <div class="map-container">
                 <div id="map"></div>
